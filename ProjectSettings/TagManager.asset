@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Pacman
+    uniqueID: 666646785
+    locked: 0
+  - name: Wall
+    uniqueID: 501586611
+    locked: 0
