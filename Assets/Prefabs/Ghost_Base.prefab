@@ -303,6 +303,10 @@ GameObject:
   - component: {fileID: 5150078653440403435}
   - component: {fileID: 5150078653440403436}
   - component: {fileID: 5150078653440403437}
+  - component: {fileID: -5045428909814638580}
+  - component: {fileID: -7844079559299939833}
+  - component: {fileID: 5909535205055190790}
+  - component: {fileID: 7723760253178467919}
   m_Layer: 0
   m_Name: Ghost_Base
   m_TagString: Untagged
@@ -378,6 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25a6d870b161d742a1e55586158bce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialBehavior: {fileID: 0}
+  target: {fileID: 0}
   points: 200
 --- !u!114 &5150078653440403437
 MonoBehaviour:
@@ -397,6 +403,58 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &-5045428909814638580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150078653440403425}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f71010d27ae6e14ba3dbd559e873069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 7
+--- !u!114 &-7844079559299939833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150078653440403425}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785c2f02bd2fd9841b6430b90ec173de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+--- !u!114 &5909535205055190790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150078653440403425}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf6fe3da8703394abaee1fdf483863e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 8
+--- !u!114 &7723760253178467919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150078653440403425}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6ce9fdf9d64b34b888d81f5b54bd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 20
 --- !u!1 &5150078653932216048
 GameObject:
   m_ObjectHideFlags: 0
