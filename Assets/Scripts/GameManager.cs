@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,13 +11,23 @@ public class GameManager : MonoBehaviour
     public Pacman pacman;
     public Transform pellets;
 
+    public GameObject gameOver;
     public int ghostMutiplier { get; private set; } = 1;
     public int score {  get; private set; }
     public int lives { get; private set; }
 
+    public TMP_Text livesDisplay;
+    public TMP_Text scoreDisplay;
+
+    private void Awake()
+    {
+        gameOver.SetActive(false);
+    }
     private void Start()
     {
         NewGame();
+        
+        
     }
 
     private void NewGame()
@@ -27,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        livesDisplay.text = ("x " + lives.ToString());
+        scoreDisplay.text = score.ToString();
         if (this.lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
@@ -45,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
+        gameOver.SetActive(false);
         ResetGhostMutiplier();
         for (int i = 0; i < this.ghosts.Length; i++)
         {
@@ -69,10 +84,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < this.ghosts.Length; i++)
         {
+
             this.ghosts[i].gameObject.SetActive(false);
         }
 
         this.pacman.gameObject.SetActive(false);
+
+        gameOver.SetActive(true);
     }
 
     public void GhostEaten(Ghost ghost)
@@ -110,6 +128,11 @@ public class GameManager : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
+        for(int i = 0; i < ghosts.Length; i++)
+        {
+            this.ghosts[i].frightened.Enable(pellet.duration);
+        }
+        
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ghostMutiplier), pellet.duration);
