@@ -6111,6 +6111,10 @@ PrefabInstance:
       propertyPath: duration
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5524724880933660161, guid: 79092eaf8e9e3a4408037369591a8e3d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5524724880933660164, guid: 79092eaf8e9e3a4408037369591a8e3d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6154,6 +6158,10 @@ PrefabInstance:
     - target: {fileID: 5524724880933660164, guid: 79092eaf8e9e3a4408037369591a8e3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524724880933660165, guid: 79092eaf8e9e3a4408037369591a8e3d, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5524724880933660166, guid: 79092eaf8e9e3a4408037369591a8e3d, type: 3}
       propertyPath: target
@@ -6832,7 +6840,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9669960e415ea604d81fb0784634df79, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.267
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6991,6 +6999,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6801114813599440041, guid: b3a5e2dbf402d7f4abffcb9929eef5b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6801114813599440044, guid: b3a5e2dbf402d7f4abffcb9929eef5b4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7034,6 +7046,10 @@ PrefabInstance:
     - target: {fileID: 6801114813599440044, guid: b3a5e2dbf402d7f4abffcb9929eef5b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801114813599440045, guid: b3a5e2dbf402d7f4abffcb9929eef5b4, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6801114813599440046, guid: b3a5e2dbf402d7f4abffcb9929eef5b4, type: 3}
       propertyPath: target
@@ -7282,7 +7298,7 @@ GameObject:
   - component: {fileID: 765822192}
   - component: {fileID: 765822191}
   m_Layer: 5
-  m_Name: Quitbtn
+  m_Name: btnStartScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7353,16 +7369,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560305126}
-        m_TargetAssemblyTypeName: Quit, Assembly-CSharp
-        m_MethodName: QuitGame
-        m_Mode: 1
+      - m_Target: {fileID: 1560305127}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: SceneChanged
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: TilteScreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &765822192
@@ -11725,7 +11741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1522869917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11889,6 +11905,7 @@ GameObject:
   - component: {fileID: 1560305124}
   - component: {fileID: 1560305125}
   - component: {fileID: 1560305126}
+  - component: {fileID: 1560305127}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -11951,6 +11968,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac6711f0299c7164a96b6793ff34de5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1560305127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560305123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd83b003361aa54f97cbee29244aa72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1569052579
@@ -12799,7 +12828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Back to menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12903,6 +12932,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5805573615281829401, guid: b266a90c0d5ec11428363930a50e96f1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5805573615281829404, guid: b266a90c0d5ec11428363930a50e96f1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -12947,6 +12980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5805573615281829405, guid: b266a90c0d5ec11428363930a50e96f1, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5805573615281829406, guid: b266a90c0d5ec11428363930a50e96f1, type: 3}
       propertyPath: target
       value: 
@@ -12986,6 +13023,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4459439601698098371, guid: 991067e4e457b8540b87b6a96f4b4547, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4459439601698098372, guid: 991067e4e457b8540b87b6a96f4b4547, type: 3}
       propertyPath: target
       value: 
@@ -13037,6 +13078,10 @@ PrefabInstance:
     - target: {fileID: 4459439601698098374, guid: 991067e4e457b8540b87b6a96f4b4547, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459439601698098375, guid: 991067e4e457b8540b87b6a96f4b4547, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4459439601698098377, guid: 991067e4e457b8540b87b6a96f4b4547, type: 3}
       propertyPath: m_Name
